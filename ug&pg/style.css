@@ -301,6 +301,8 @@ html{
     text-shadow: 0 0 1.5px #222831;
 }
 
+
+
 /* ++++++++++FOOTER++++++++++++++++++ */
 
 
@@ -616,5 +618,32 @@ iframe{
         width:200px;
     }
 }
+
+
+
+
+
+
+/* +++++++++++++++++++ SCROLL UP BUTTON +++++++++++++++++++++ */
+
+.scroll-up-BtnCont{
+    position:fixed;
+    bottom: 18px;
+    right:20px;
+    padding:.55em;
+    background-color:#fdb827;
+    border-radius: 50%;
+    box-shadow: 0 0 5px #222831;
+    transition: all 500ms ease;
+
+}
+
+#scroll-up-Btn{
+    font-size: 1.5em;
+    padding:0 .1em;
+    color:#f4f4f4;
+    text-shadow: 0 5px 10px #222831;
+}
+
 
 
