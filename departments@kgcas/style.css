@@ -584,12 +584,11 @@ iframe{
 .carousel-caption {
     position: initial;
     z-index: 10;
-    padding: 5rem 8rem;
+    padding: 5rem 8rem;    
     color: black;
     text-align: center;
     font-size: 1.2rem;
-    font-style: normal;
-  
+    font-style: normal;  
     line-height: 2rem
 }
 
@@ -600,7 +599,7 @@ iframe{
     .carousel-caption {
         position: initial;
         z-index: 10;
-        padding: 3rem 2rem;
+        padding: 3rem 2rem 5.2rem 2rem;
         text-align: center;
         font-size: 0.8rem;
         font-style: normal;
@@ -613,7 +612,7 @@ iframe{
 .carousel-caption img {
     width: 10rem;
     border-radius: 3rem;
-    margin-top: 2rem
+
 }
 
 @media(max-width:767px) {
@@ -625,8 +624,8 @@ iframe{
 }
 
 #image-caption {
-    
-    font-size: 1.2rem;
+    font-weight: 500;
+    font-size: 1.5rem;
     margin-top: 0.7rem
 }
 
