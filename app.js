@@ -29,7 +29,7 @@ hamburger.addEventListener('click',()=>{
 
 
 
-//  QUOTE GENERATED+++++++++++++++++++++++++++++++
+//  QUOTE GENERATOR+++++++++++++++++++++++++++++++
 
 
 const arrOfQuotes=[
