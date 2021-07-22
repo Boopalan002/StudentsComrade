@@ -245,6 +245,8 @@ html{
     color:#222831;
 }
 
+
+
 .cont-head h2 span{
     color:#fdb827;
 }
@@ -294,7 +296,10 @@ html{
     padding-top: 1.5em;
     padding-left: .3em;
     font-size: 1.1em;
+    word-spacing: .2em;
+    line-height: 1.3em;
     color:#222831;
+    font-weight: 600;
 }
 
 .cont-content h5 span{
@@ -372,7 +377,7 @@ html{
     position: absolute;
     right:25%;
     top:25%;
-    background-image: url("../images/landingImg.JPG");
+    background-image: url("../images/landing.JPG");
     background-size: cover;
     background-repeat: no-repeat;
     background-color: #22283122; 
@@ -419,6 +424,11 @@ html{
         padding: .6em .5em 0 0;
         font-size: .8em;
     }
+
+    .cont-head{
+        width: 160%;
+    }
+
     .cont-1{
         margin-left: 30px;
     }
@@ -566,7 +576,7 @@ html{
 }
 
 .cards-cont{
-    margin: 7em 0 7em 0;
+    margin: 5em 0 7em 0;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -765,48 +775,95 @@ html{
     line-height: 2em;
     border-radius: 10px;
     /* box-shadow: 0 0 5px #22283188; */
-    border-radius: 60px;
+    border-radius: 20px;
     background: #f4f4f4;
-    box-shadow:  -20px 20px 25px #cfcfcf,
-             20px -20px 50px #ffffff;
+    box-shadow:  5px 5px 5px #626262,
+                 -5px -5px 10px #ffffff;
+    
 }
 
+/* ADDED FROM HERE*/
 
-.cont-of-quote{
+
+.quoteAndImg-cont{
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.quote-container h2{
+.quoteImg-cont{
+    min-width:180px;
+    height:180px;
+    background-image: url("../AuthorsImg/ElonMusk.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 5px 5px 0 #fdb827;
+}
+
+.actualQuote-cont{
+    padding:1em 0 .4em 2em;
     color:#222831;
     letter-spacing: .03em;
-    word-spacing: .07em;
-    width:80%;
+    word-spacing: .05em;
     text-shadow:0 0 1px #222831;
-}
-
-.author{
-    padding:0 1em 1em 1em;
+    max-width:50ch;
     display: flex;
-    justify-content: flex-end;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.author h3{
+.actualQuote-cont h2{
+    position: relative;
+}
+
+@media(max-width:430px){
+    .actualQuote-cont h2{
+        font-size: 1.3em;
+    }
+}
+
+@media(max-width:360px ) {
+    .actualQuote-cont h2{
+        font-size: 1em;
+    }
+}
+
+.actualQuote-cont h2::before{
+    content:' ';
+    position:absolute;
+    top:5px;
+    left:-15px;
+    width:10px;
+    height:20px;
+    background-color:#fdb827;
+}
+
+
+.author-cont{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.author-cont h3{
     color:#fdb827;
     letter-spacing: .05em;
     position: relative;
     margin-right:2em ;
+    font-weight: 700;
+    text-shadow: none;
+    font-style: italic;
 }
 
+
 @media(max-width:420px){
-    .author h3{
+    .author-cont h3{
         margin-right:0em;
     }
 }
 
-.author h3::before{
+.author-cont h3::before{
     content: ' ';
     position: absolute;
     bottom: 0;
@@ -814,10 +871,21 @@ html{
     width:20px;
     height:5px;
     background-color: #222831;
+} 
+
+
+@media (max-width:560px){
+    .quoteAndImg-cont{
+        flex-direction: column;
+    }
 }
 
+
+/* TILLHERE */
+
+
 .btn-container{
-    margin-top:2em;
+    margin-top:1em;
     display: flex;
     justify-content: center;
 }
