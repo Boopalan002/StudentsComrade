@@ -463,7 +463,8 @@ html{
 
     .quote h2{
         color:#f4f4f4;
-        text-shadow: 0 0 5px #222831;
+         text-shadow:  3px 3px 3px #626262,
+                      -3px -3px 3px #ffffff;
         font-weight: 900;
     }
     .quote h2 span{
