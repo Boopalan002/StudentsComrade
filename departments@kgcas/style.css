@@ -274,7 +274,7 @@ html{
 
 
 .address{
-    padding: 1em;
+    padding: 1em 0  1em 1em;
     width:55%;
     margin-right: 5em;
     border-bottom: 10px solid #fdb827;
@@ -311,6 +311,23 @@ html{
     color:#f4f4f4;
     padding-bottom: .2em;
 }
+
+@media(max-width:620px){
+    .clg-descrip{
+        font-size: .9em;
+    }
+
+    .address{
+        margin-right: 0;
+    }
+}
+
+@media(max-width:495px){
+    .clg-descrip{
+        font-size: .63em;
+    }
+}
+
 
 
 .clg-address{

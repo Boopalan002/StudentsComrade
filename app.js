@@ -119,13 +119,6 @@ const arrOfQuotes=[
         quote:"If we are to teach real peace in this world, and if we are to carry on a real war against war, we shall have to begin with the children.",
         author:"Mahatma Gandhi",
     },
-
-    {
-        image:"AbdulKalam",
-        quote:"Don't take rest after your first victory because if you fail in second, more lips are waiting to say that your first victory was just luck.",
-        author:"Dr APJ Abdul Kalam",
-    },
-
     
     {
         image:"ElonMusk",
@@ -133,6 +126,11 @@ const arrOfQuotes=[
         author:"Elon Musk",
     },
 
+    {
+        image:"AbdulKalam",
+        quote:"Winners are not those who never fail but those who never quit.",
+        author:"Dr APJ Abdul Kalam",
+    },
 
 ]
 
