@@ -1,4 +1,9 @@
 
+
+var screenWidth=window.screen.width;
+
+
+
 //  PAGE RELOAD +++++++++++++++++++++++++++++++++
 
 const pageReload=document.querySelector('.logo');
@@ -65,7 +70,7 @@ const arrOfQuotes=[
   
     {
         image:"MarkZuckerberg",
-        quote:"I think a simple rule of business is, if you dn actually make a lot of progress.",
+        quote:"I think a simple rule of business is, if you don't actually make a lot of progress.",
         author:"Mark Zuckerberg",
     },
 
@@ -138,6 +143,7 @@ const quoteBtn=document.querySelector('.quote-btn');
 const quoteImg=document.querySelector('#quote-Img');
 const theQuote=document.querySelector('#actual-quote');
 const theAuthor=document.querySelector('#author-name');
+const quoteBackDround=document.querySelector('#contOfQuote');
 
 
 var count=0;
@@ -145,11 +151,22 @@ var count=0;
 quoteBtn.addEventListener('click',()=>{
     
 
-    quoteImg.style.backgroundImage=`url(AuthorsImg/${arrOfQuotes[count].image}.jpg)`;
+    if(screenWidth<=520){
+        if(arrOfQuotes[count].image==="MarieCurie"){
+            quoteBackDround.style.backgroundPositionY="-15px";
+        }else{
+            quoteBackDround.style.backgroundPositionY="0";
+        }
+        quoteBackDround.style.backgroundImage=`url(AuthorsImg/${arrOfQuotes[count].image}.jpg)`;
+    }else{
+        quoteImg.style.backgroundImage=`url(AuthorsImg/${arrOfQuotes[count].image}.jpg)`;
+    }
+    
     theQuote.innerHTML=arrOfQuotes[count].quote;
     theAuthor.innerHTML=arrOfQuotes[count].author;
     count++;
-  
+    console.log("hellll");
+
     if(count===arrOfQuotes.length){
         count=0;
     }
@@ -175,6 +192,91 @@ window.addEventListener('scroll',()=>{
 })
 
 
+// ANIMATION STUFF ++++++++++++++++++++++++++++++++++++++
+
+const motoHead=document.querySelector('.team-moto-txt');
+const motoPara=document.querySelector('.team-moto-para');
+
+
+
+window.addEventListener('scroll',()=>{
+
+    if(screenWidth<=500){
+        
+        if(window.pageYOffset > 2500){
+            motoHead.classList.add('lift-moto-para');
+            console.log("poped");
+        }else{
+            motoHead.classList.remove('lift-moto-para')
+        }
+        
+        if(window.pageYOffset > 2550){
+            motoPara.classList.add('lift-moto-para');
+        }else{
+            motoPara.classList.remove('lift-moto-para');
+        }
+    }else if(screenWidth<=650){
+        
+        if(window.pageYOffset > 2420){
+            motoHead.classList.add('lift-moto-para');
+            console.log("poped");
+        }else{
+            motoHead.classList.remove('lift-moto-para')
+        }
+        
+        if(window.pageYOffset > 2480){
+            motoPara.classList.add('lift-moto-para');
+        }else{
+            motoPara.classList.remove('lift-moto-para');
+        }
+        
+    }else if(screenWidth<=1000){
+        
+        if(window.pageYOffset > 2110){
+            motoHead.classList.add('lift-moto-para');
+            console.log("poped");
+        }else{
+            motoHead.classList.remove('lift-moto-para')
+        }
+        
+        if(window.pageYOffset > 2160){
+            motoPara.classList.add('lift-moto-para');
+        }else{
+            motoPara.classList.remove('lift-moto-para');
+        }
+
+    }else if(screenWidth<=1070){
+                
+        if(window.pageYOffset > 1800){
+            motoHead.classList.add('lift-moto-para');
+            console.log("poped");
+        }else{
+            motoHead.classList.remove('lift-moto-para')
+        }
+        
+        if(window.pageYOffset > 1850){
+            motoPara.classList.add('lift-moto-para');
+        }else{
+            motoPara.classList.remove('lift-moto-para');
+        }
+    }else{
+        if(window.pageYOffset > 1530){
+            motoHead.classList.add('lift-moto-para');
+            console.log("poped");
+        }else{
+            motoHead.classList.remove('lift-moto-para')
+        }
+
+        if(window.pageYOffset > 1600){
+            motoPara.classList.add('lift-moto-para');
+        }else{
+            motoPara.classList.remove('lift-moto-para');
+        }
+    }
+
+})
+
+
 // FIREBASE STUFF......
 
 
@@ -190,21 +292,3 @@ window.addEventListener('scroll',()=>{
 //   // Initialize Firebase
 //   firebase.initializeApp(firebaseConfig);
 
-  
-
-
-    // fetch("https://type.fit/api/quotes")
-
-    //     .then((response)=>{
-    //         return response.json();
-    //     })
-    
-    //         .then((data)=>{
-    //             randomNum=Math.floor(Math.random()*1642);
-    //             quote.innerText=data[randomNum].text;
-    //             author.innerText=data[randomNum].author;
-    //         })   
-         
-    //     .catch(()=>{   
-    //         alert('OOPS! Slow network or api link broke');             
-    //     })  
