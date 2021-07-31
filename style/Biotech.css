@@ -1,0 +1,143 @@
+
+/*--body--*/
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+/*--Ec nav--*/
+.ec_nav{
+	position: fixed;
+	bottom: 20px;
+	right: 10px;
+ 	z-index: 10;
+}
+/*--Cover Image--*/
+.cover-img {
+  
+    
+    min-height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.dept {
+  position: absolute;
+	top: 40%;
+	width: 70%;
+  text-align: left;
+  font-size: 18px;
+}
+.dept{
+   	padding: .3em .5em 0 0;
+   	font-size: 32px;
+}
+.dept_name0{
+   	font-weight: 900;
+   	color: white;
+}
+.dept_name1{
+   	font-weight: 900;
+   	color:#fdb827;
+	text-shadow: 0 0 5px #222831; 
+}
+.short{
+  color: #fdb827;
+  font-weight: bold;
+  text-shadow: 0 0 5px #222831;
+}
+/*--Profile--*/
+
+.title{
+	font-weight: bold;
+	text-decoration-line: underline;
+	text-underline-position: under;
+	text-decoration-color: #F4D03F;
+}
+.description{
+	font-size: 20px;
+	font-weight: 500;
+	word-spacing: 1px;
+	object-position: center;
+}
+
+
+/*--Career Opportunities--*/
+/*--Syllabus--*/
+.od{
+  background-color: #FEF9E7;
+}
+.ods{
+	min-height: 700px;
+}
+/*--Lesson Notes--*/
+.lesson_notes{
+	min-height: 400px;
+}
+/*--Question Bank--*/
+.questionbank{
+	min-height: 400px;
+}
+/*--Further studies--*/
+.bg-cover {
+    background-attachment: static;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.description_01{
+	background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), 
+	url(../assets/images/higheredu.jpg);
+	font-size: 20px;
+	font-weight: 600;
+	word-spacing: 1px;
+	object-position: center;
+}
+/*--Recruiters--*/
+/*--Alumni Message--*/
+.alumni_message{
+  background-color: #FEF9E7;
+}
+.carousel{
+  margin-top: 50px;
+  background-color: #F4D03F;
+}
+.carousel-inner{
+  min-height: 300px;
+}
+.carousel-caption{
+  color: black;
+  top: 50%;
+}
+.description_02{
+  font-size: 16px;
+  font-weight: 360;
+  word-spacing: 1px;
+  object-position: center;
+}
+@media only screen and (max-width: 768px) {
+  .carousel-inner{
+  min-height: 500px;
+}
+}
+
+ hr.uline{
+  border: 1px solid white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
