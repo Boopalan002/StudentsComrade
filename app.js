@@ -15,6 +15,7 @@ pageReload.addEventListener('click',()=>{
 //  HAMBURGER MENU+++++++++++++++++++++++++++++
 
 
+
 const hamburger=document.querySelector('.hamBurger');
 
 const nav=document.querySelector('.navUl');
@@ -31,10 +32,8 @@ const midLine2=document.querySelector('.mid-line2');
 hamburger.addEventListener('click',()=>{
     nav.classList.toggle('show');
 
-    let currentPage=window.location.pathname;
 
-
-    if(currentPage=="/index.html"){
+    if(hamburger.children[1].className=="mid-line-cont"){
         line1.classList.toggle('changetheline1');
         line3.classList.toggle('changetheline3');
 
@@ -50,20 +49,7 @@ hamburger.addEventListener('click',()=>{
 
 })
 
-// const hamburgerMenu=document.querySelector('.hamBurgerMenu');
-// console.log(hamburgerMenu);
 
-// const lines1=document.querySelector('.lines1');
-// const lines3=document.querySelector('.lines3');
-
-
-// hamburgerMenu.addEventListener('click',()=>{
-//     nav.classList.toggle('show');
-//     console.log("gek")
-//     // line1.classList.toggle('changeline1');
-//     // line2.classList.toggle('changeline2');
-//     // line3.classList.toggle('changeline3');
-// })
 
 
 //  QUOTE GENERATOR+++++++++++++++++++++++++++++++
