@@ -1,5 +1,4 @@
 
-
 var screenWidth=window.screen.width;
 
 
@@ -17,21 +16,54 @@ pageReload.addEventListener('click',()=>{
 
 
 const hamburger=document.querySelector('.hamBurger');
+
 const nav=document.querySelector('.navUl');
 
 const line1=document.querySelector('.line1');
 const line2=document.querySelector('.line2');
 const line3=document.querySelector('.line3');
 
+
+const midLine1=document.querySelector('.mid-line1');
+const midLine2=document.querySelector('.mid-line2');
+
+
 hamburger.addEventListener('click',()=>{
     nav.classList.toggle('show');
 
-    line1.classList.toggle('changeline1');
-    line2.classList.toggle('changeline2');
-    line3.classList.toggle('changeline3');
+    let currentPage=window.location.pathname;
+
+
+    if(currentPage=="/index.html"){
+        line1.classList.toggle('changetheline1');
+        line3.classList.toggle('changetheline3');
+
+        midLine1.classList.toggle('changeMidLine1');
+        midLine2.classList.toggle('changeMidLine2');
+        
+    }else{
+
+        line1.classList.toggle('changeline1');
+        line2.classList.toggle('changeline2');
+        line3.classList.toggle('changeline3');
+    }
+
 })
 
+// const hamburgerMenu=document.querySelector('.hamBurgerMenu');
+// console.log(hamburgerMenu);
 
+// const lines1=document.querySelector('.lines1');
+// const lines3=document.querySelector('.lines3');
+
+
+// hamburgerMenu.addEventListener('click',()=>{
+//     nav.classList.toggle('show');
+//     console.log("gek")
+//     // line1.classList.toggle('changeline1');
+//     // line2.classList.toggle('changeline2');
+//     // line3.classList.toggle('changeline3');
+// })
 
 
 //  QUOTE GENERATOR+++++++++++++++++++++++++++++++
@@ -205,7 +237,6 @@ window.addEventListener('scroll',()=>{
         
         if(window.pageYOffset > 2500){
             motoHead.classList.add('lift-moto-para');
-            console.log("poped");
         }else{
             motoHead.classList.remove('lift-moto-para')
         }
@@ -219,7 +250,6 @@ window.addEventListener('scroll',()=>{
         
         if(window.pageYOffset > 2420){
             motoHead.classList.add('lift-moto-para');
-            console.log("poped");
         }else{
             motoHead.classList.remove('lift-moto-para')
         }
@@ -234,7 +264,7 @@ window.addEventListener('scroll',()=>{
         
         if(window.pageYOffset > 2110){
             motoHead.classList.add('lift-moto-para');
-            console.log("poped");
+           
         }else{
             motoHead.classList.remove('lift-moto-para')
         }
@@ -249,7 +279,7 @@ window.addEventListener('scroll',()=>{
                 
         if(window.pageYOffset > 1800){
             motoHead.classList.add('lift-moto-para');
-            console.log("poped");
+            
         }else{
             motoHead.classList.remove('lift-moto-para')
         }
@@ -262,7 +292,7 @@ window.addEventListener('scroll',()=>{
     }else{
         if(window.pageYOffset > 1530){
             motoHead.classList.add('lift-moto-para');
-            console.log("poped");
+           
         }else{
             motoHead.classList.remove('lift-moto-para')
         }
