@@ -36,6 +36,7 @@ html{
     justify-content: flex-start;
     user-select: none;
     overflow: hidden;
+    margin-bottom: 3.5em;
 }
 
 .headerr{
