@@ -15,6 +15,7 @@ pageReload.addEventListener('click',()=>{
 //  HAMBURGER MENU+++++++++++++++++++++++++++++
 
 
+
 const hamburger=document.querySelector('.hamBurger');
 
 const nav=document.querySelector('.navUl');
@@ -40,20 +41,7 @@ hamburger.addEventListener('click',()=>{
 
 })
 
-// const hamburgerMenu=document.querySelector('.hamBurgerMenu');
-// console.log(hamburgerMenu);
 
-// const lines1=document.querySelector('.lines1');
-// const lines3=document.querySelector('.lines3');
-
-
-// hamburgerMenu.addEventListener('click',()=>{
-//     nav.classList.toggle('show');
-//     console.log("gek")
-//     // line1.classList.toggle('changeline1');
-//     // line2.classList.toggle('changeline2');
-//     // line3.classList.toggle('changeline3');
-// })
 
 
 //  QUOTE GENERATOR+++++++++++++++++++++++++++++++
