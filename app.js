@@ -33,19 +33,11 @@ hamburger.addEventListener('click',()=>{
     nav.classList.toggle('show');
 
 
-    if(hamburger.children[1].className=="mid-line-cont"){
         line1.classList.toggle('changetheline1');
         line3.classList.toggle('changetheline3');
 
         midLine1.classList.toggle('changeMidLine1');
         midLine2.classList.toggle('changeMidLine2');
-        
-    }else{
-
-        line1.classList.toggle('changeline1');
-        line2.classList.toggle('changeline2');
-        line3.classList.toggle('changeline3');
-    }
 
 })
 
