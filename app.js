@@ -31,22 +31,12 @@ const midLine2=document.querySelector('.mid-line2');
 hamburger.addEventListener('click',()=>{
     nav.classList.toggle('show');
 
-    let currentPage=window.location.pathname;
 
-
-    if(currentPage=="/index.html"){
         line1.classList.toggle('changetheline1');
         line3.classList.toggle('changetheline3');
 
         midLine1.classList.toggle('changeMidLine1');
         midLine2.classList.toggle('changeMidLine2');
-        
-    }else{
-
-        line1.classList.toggle('changeline1');
-        line2.classList.toggle('changeline2');
-        line3.classList.toggle('changeline3');
-    }
 
 })
 

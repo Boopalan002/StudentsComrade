@@ -29,13 +29,14 @@ html{
 
 .main{
     width:auto;
-    height:100vh;
+    height:auto;
     /* border:1px solid red; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     user-select: none;
-    /* overflow: hidden; */
+    overflow: hidden;
+    margin-bottom: 3.5em;
 }
 
 .headerr{
@@ -231,7 +232,6 @@ html{
         display:flex;
         flex-direction: column;
         justify-content: space-evenly;
-
     }
     
     .line{

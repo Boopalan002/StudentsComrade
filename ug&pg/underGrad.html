@@ -34,10 +34,17 @@
             </div>
 
             <div class="hamBurger">
-                <div class="lines line1"></div>
-                <div class="lines line2"></div>
-                <div class="lines line3"></div>
-            </div>
+              <!-- <div class="lines line1"></div>
+              <div class="lines line2"></div>
+              <div class="lines line2 mid-line"></div>
+              <div class="lines line3"></div> -->
+              <diV class="line line1"></diV>
+              <div class="mid-line-cont">
+                  <div class="line mid-line1"></div>
+                  <div class="line mid-line2"></div>
+              </div>
+              <diV class="line line3"></diV>
+          </div>
 
             <div class="navv">
                 <ul class="navUl">
@@ -418,6 +425,52 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js">
         </script>
 
-    <script src="../app.js"></script>        
+ 
+    <script>
+      //  PAGE RELOAD +++++++++++++++++++++++++++++++++
+
+                  const pageReload=document.querySelector('.logo');
+
+                  pageReload.addEventListener('click',()=>{
+                      window.location.reload();
+                  })
+
+
+                  //  HAMBURGER MENU+++++++++++++++++++++++++++++
+
+
+                  const hamburger=document.querySelector('.hamBurger');
+
+                  const nav=document.querySelector('.navUl');
+
+                  const line1=document.querySelector('.line1');
+                  const line2=document.querySelector('.line2');
+                  const line3=document.querySelector('.line3');
+
+
+                  const midLine1=document.querySelector('.mid-line1');
+                  const midLine2=document.querySelector('.mid-line2');
+
+
+                  hamburger.addEventListener('click',()=>{
+                      nav.classList.toggle('show');
+
+
+                      if(hamburger.children[1].className=="mid-line-cont"){
+                          line1.classList.toggle('changetheline1');
+                          line3.classList.toggle('changetheline3');
+
+                          midLine1.classList.toggle('changeMidLine1');
+                          midLine2.classList.toggle('changeMidLine2');
+                          
+                      }else{
+
+                          line1.classList.toggle('changeline1');
+                          line2.classList.toggle('changeline2');
+                          line3.classList.toggle('changeline3');
+                      }
+
+                  })
+    </script>     
 </body>
 </html>

@@ -111,7 +111,7 @@ html{
     text-shadow: 0 0 1px #222831;
 }
 
-
+/* 
 .hamBurger{
     position: absolute;
     top:33px;
@@ -150,7 +150,7 @@ html{
     position: absolute;
     bottom:9.5px;
     transform: rotate(-45deg);
-}
+} */
 
 
 .btnclick{
@@ -185,14 +185,16 @@ html{
 @media(max-width:895px){
     .navUl{
         flex-direction: column;
-        background-color: #fdb827;
+        background-color:#fdb827;
         position: absolute;
+        top:83px;
         right:0;
-        top:70px;
-        transform: translateY(-350px);
-        transition: transform .5s ease-in-out;
-        z-index: 20;
+        /* transform: translateY(-300px); */
+        transition: all .5s ease-in-out;
+        z-index: 50;
         box-shadow: 0 0  5px #222831;
+        clip-path: polygon(0 0,100% 0,100% 0,0 0);
+        pointer-events: none;
     }
 
     .navUl li{
@@ -206,17 +208,60 @@ html{
         background:linear-gradient(transparent 60%,#f4f4f4 40%);
     }
 
-    .hamBurger{
-        display: block;
-    }
-
     .show{
-        transform: translateY(0);
+        clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
+        pointer-events: all;
     }
 
     .headerr{
         border-color: transparent;
         box-shadow: none;
+    }
+
+    .hamBurger{
+        position: absolute;
+        top:33px;
+        right:18px;
+        /* background-color: #fdb827; */
+        padding: 0 .35em;
+        /* box-shadow: 0 0 3px #222831; */
+        width:48px;
+        height:33px;
+        display:flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    
+    .line{
+        width:35px;
+        height:3px;
+        background-color: #fdb827;
+        border-radius: 50px;
+        transition: all 700ms ease-in-out;
+    }
+
+    .mid-line-cont{
+        position: relative;
+    }
+    .mid-line2{
+        position: absolute;
+        top:0;
+        left:0;
+    }
+
+    .changetheline1{
+        transform: scale(0);
+    }
+    .changetheline3{
+        transform: scale(0);
+    }
+
+    .changeMidLine1{
+        transform: rotate(45deg);
+    }
+
+    .changeMidLine2{
+        transform: rotate(-45deg);
     }
 }
 
