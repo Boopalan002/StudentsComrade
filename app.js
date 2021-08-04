@@ -29,7 +29,18 @@ const midLine1=document.querySelector('.mid-line1');
 const midLine2=document.querySelector('.mid-line2');
 
 
+const navUl=document.querySelector('.navUl');
+var count=0;
 hamburger.addEventListener('click',()=>{
+    
+    // count++;
+
+    // if(count%2!=0){
+    //     navUl.style.transition="all 1s  cubic-bezier(0.04, 1.84, 0.63, 0.63)";
+    // }else{
+    //     navUl.style.transition="all .7s ease-in-out";
+    // }
+    
     nav.classList.toggle('show');
 
 
@@ -40,7 +51,6 @@ hamburger.addEventListener('click',()=>{
         midLine2.classList.toggle('changeMidLine2');
 
 })
-
 
 
 
@@ -285,18 +295,346 @@ window.addEventListener('scroll',()=>{
 })
 
 
-// FIREBASE STUFF......
 
 
-//   // Your web app's Firebase configuration
-//   var firebaseConfig = {
-//     apiKey: "AIzaSyDlVMPXf8Zog9J_49pCGwU1MFrWNCy3a1A",
-//     authDomain: "student-s-comrade.firebaseapp.com",
-//     projectId: "student-s-comrade",
-//     storageBucket: "student-s-comrade.appspot.com",
-//     messagingSenderId: "794662227845",
-//     appId: "1:794662227845:web:d62e2381b46bb37eec7eec"
-//   };
-//   // Initialize Firebase
-//   firebase.initializeApp(firebaseConfig);
+// ++++++++++++++++++++++++Search Box+++++++++++++++++++++++++++++++++++++++++++++
 
+
+const depArr=[
+    
+    {
+        dept:"bsccs",
+        link:" ",
+        deptName:"B.Sc.CS",
+    },
+    
+    {
+        dept:"computerscience",
+        link:" ",
+        deptName:"B.Sc.CS",
+    },
+    
+    {
+        dept:"cs",
+        link:" ",
+        deptName:"B.Sc.CS",
+    },
+    
+    {
+        dept:"bscmaths",
+        link:" ",
+        deptName:"B.Sc.Maths",
+    },
+    
+    {
+        dept:"bscbiotech",
+        link:"departments@kgcas/Biotech.html",
+        deptName:"B.Sc.Bio Tech",
+    },
+    
+    {
+        dept:"bscecs",
+        link:"departments@kgcas/BscECS.html",
+        deptName:"B.Sc.ECS",
+    },
+    
+    {
+        dept:"ecs",
+        link:"departments@kgcas/BscECS.html",
+        deptName:"B.Sc.ECS",
+    },
+    
+    {
+        dept:"bscit",
+        link:" ",
+        deptName:"B.Sc.IT",
+    },
+    
+    {
+        dept:"it",
+        link:" ",
+        deptName:"B.Sc.IT",
+    },
+    
+    {
+        dept:"bscct",
+        link:" ",
+        deptName:"B.Sc.CT",
+    },
+    
+    {
+        dept:"ct",
+        link:" ",
+        deptName:"B.Sc.CT",
+    },
+    
+    {
+        dept:"bca",
+        link:"departments@kgcas/science_BCA.html",
+        deptName:"BCA",
+    },
+    
+    {
+        dept:"baenglit",
+        link:"departments@kgcas/maenglish.html",
+        deptName:"B.A.Eng Lit",
+    },
+    
+    {
+        dept:"baeng",
+        link:"departments@kgcas/maenglish.html",
+        deptName:"B.A.Eng Lit",
+    },
+    
+    {
+        dept:"bba",
+        link:" ",
+        deptName:"BBA",
+    },
+    
+    {
+        dept:"bbaca",
+        link:" ",
+        deptName:"BBA.CA",
+    },
+    
+    {
+        dept:"bcom",
+        link:"departments@kgcas/Bcom.html",
+        deptName:"B.Com",
+    },
+    
+    {
+        dept:"bcomca",
+        link:"departments@kgcas/BCom_CA.html",
+        deptName:"B.Com.CA",
+    },
+    
+    {
+        dept:"bcomit",
+        link:"departments@kgcas/BCom_IT.html",
+        deptName:"B.Com.IT",
+    },
+    
+    {
+        dept:"bcompa",
+        link:"departments@kgcas/BCom_PA.html",
+        deptName:"B.Com.PA",
+    },
+    
+    {
+        dept:"maenglit",
+        link:"departments@kgcas/MAEng.html",
+        deptName:"M.A.Eng Lit",
+    },
+    
+    {
+        dept:"maeng",
+        link:"departments@kgcas/MAEng.html",
+        deptName:"M.A.Eng Lit",
+    },
+    
+    {
+        dept:"mcomib",
+        link:"departments@kgcas/MCom_IB.html",
+        deptName:"M.Com.IB",
+    },
+
+        
+    {
+        dept:"mcom",
+        link:"departments@kgcas/MCom_IB.html",
+        deptName:"M.Com.IB",
+    },
+
+        
+    {
+        dept:"msccs",
+        link:"",
+        deptName:"M.Sc.CS",
+    },
+
+        
+    {
+        dept:"computerscience",
+        link:"",
+        deptName:"M.Sc.CS",
+    },
+    
+    {
+        dept:"cs",
+        link:"",
+        deptName:"M.Sc.CS",
+    },
+        
+    {
+        dept:"mscss",
+        link:"departments@kgcas/MscSS.html",
+        deptName:"M.Sc.SS",
+    },
+        
+    {
+        dept:"mscmaths",
+        link:" ",
+        deptName:"M.Sc.Maths",
+    },
+
+];
+
+var emptArray=[];
+
+
+
+const searchIcon=document.querySelector('.searchIcon');
+const searchBoxCont=document.querySelector('.searchBox-cont');
+const closingCross=document.querySelector('.closing-cross');
+
+searchIcon.addEventListener('click',()=>{
+    searchBoxCont.style.top=`${pageYOffset}px`;
+
+    closingCross.classList.remove('animation-for-closeBtn');
+})
+
+
+
+
+
+const goBtn=document.querySelector('.Go-btn');
+const actualInput=document.querySelector('.actual-input');
+const searchedDeptUL=document.querySelector('#searchedDept');
+
+
+goBtn.addEventListener('click',()=>{
+
+    searchedDeptUL.innerHTML=" ";
+
+    let typed=actualInput.value;
+    typed=typed.toLowerCase();
+
+   
+    let modifiedInput=makeStringShort(typed);
+
+ 
+
+
+    if(modifiedInput==="english" || modifiedInput==="eng"){
+        for(let i=0;i<depArr.length;i++){
+            if(depArr[i]["dept"]==="baenglit" || depArr[i]["dept"]==="maenglit"){
+                emptArray.push(depArr[i]);
+            }
+        }
+    }else if(modifiedInput==="maths" || modifiedInput==="mat" || modifiedInput==="math"){
+        for(let i=0;i<depArr.length;i++){
+            if(depArr[i]["dept"]==="bscmaths" || depArr[i]["dept"]==="mscmaths"){
+                emptArray.push(depArr[i]);
+            }
+        }
+    }else if(modifiedInput==="biotech" || modifiedInput==="bio"){
+        for(let i=0;i<depArr.length;i++){
+            if(depArr[i]["dept"]==="bscbiotech"){
+                emptArray.push(depArr[i]);
+                break;
+            }
+        }
+    }else if(modifiedInput==="bsc"){
+        for(let i=0;i<depArr.length;i++){
+            if(depArr[i]["dept"][0]==='b' && depArr[i]["dept"][1]==='s' && depArr[i]["dept"][2]==='c'){
+                emptArray.push(depArr[i]);
+            }
+        }
+    }else if(modifiedInput==="msc"){
+        for(let i=0;i<depArr.length;i++){
+            if(depArr[i]["dept"][0]==='m' && depArr[i]["dept"][1]==='s' && depArr[i]["dept"][2]==='c'){
+                emptArray.push(depArr[i]);
+            }
+        }
+    }else if(modifiedInput==="bcom"){
+        for(let i=0;i<depArr.length;i++){
+            if(depArr[i]["dept"][0]==='b' && depArr[i]["dept"][1]==='c' && depArr[i]["dept"][2]==='o'){
+                emptArray.push(depArr[i]);
+            }
+        }
+    }else{
+
+        for(let i=0;i<depArr.length;i++){
+            if(depArr[i]["dept"]===modifiedInput){
+                emptArray.push(depArr[i]);
+            }
+        }
+    }
+
+
+
+
+    if(emptArray.length===0){
+        printerrormsg();
+    }else{
+        displaySearchedDept(emptArray);
+    }
+
+
+    emptArray=[];
+})
+
+function makeStringShort(intputStr){
+    
+    let arr=Array.from(intputStr);
+    arr= arr.filter((e)=>(e!=" " && e!="."));
+    arr=arr.join("");
+    return arr;
+}
+
+function displaySearchedDept(searchedArrofDept){
+    
+    // console.log(searchedArrofDept);
+
+    for(let i=0;i<searchedArrofDept.length;i++){
+        
+        let liOfDept=document.createElement('li');
+        let pOfDept=document.createElement('p');
+        let arrowOfDept=document.createElement('h3');
+
+        let actualArrow=document.createElement('i');
+
+        
+        pOfDept.innerHTML=searchedArrofDept[i]["deptName"];
+        actualArrow.classList.add('fas');
+        actualArrow.classList.add('fa-arrow-right');
+
+        arrowOfDept.appendChild(actualArrow);
+        liOfDept.appendChild(pOfDept);
+        liOfDept.appendChild(arrowOfDept);
+
+ 
+
+        liOfDept.addEventListener('click',()=>{
+            window.location.href = `${searchedArrofDept[i]["link"]}`;
+        })
+
+        searchedDeptUL.appendChild(liOfDept);
+ 
+        
+    }
+}
+
+
+function printerrormsg(){
+    let sorryText=document.createElement('p');
+    sorryText.classList.add('sryTxtCont');
+    sorryText.innerHTML="OOPS! Seems like you misspelled the department name.";
+    sorryText.style.textAlign="center";
+    searchedDeptUL.appendChild(sorryText);
+    console.log(searchedDeptUL);
+}
+
+
+
+closingCross.addEventListener('click',()=>{
+    
+    closingCross.classList.add('animation-for-closeBtn');
+    
+    searchBoxCont.style.top="-120%";
+
+    searchedDeptUL.innerHTML=" ";
+    actualInput.value="";
+})

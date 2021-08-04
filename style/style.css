@@ -30,7 +30,6 @@ html{
 .main{
     width:auto;
     height:auto;
-    /* border:1px solid red; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -47,10 +46,8 @@ html{
     height: auto;
     width:96%;
     margin:0 auto;
-    cursor: pointer;
     /* border:1px solid blue; */
     border-bottom: 3px solid #f4f4f4;
-    box-shadow: -10px 0 3px #f4f4f4;
     position: relative;
 }
 
@@ -103,6 +100,7 @@ html{
 .logo{
     padding: .3em .5em 0 0;
     font-size: 1.2em;
+    cursor: pointer;
 }
 .logo h1{
     font-weight: 900;
@@ -189,10 +187,10 @@ html{
         flex-direction: column;
         background-color:#f4f4f4;
         position: absolute;
-        top:83px;
+        top:84px;
         right:0;
         /* transform: translateY(-300px); */
-        transition: all .5s ease-in-out;
+        transition: all 700ms ease-in-out;
         z-index: 50;
         box-shadow: 0 0  5px #222831;
         clip-path: polygon(0 0,100% 0,100% 0,0 0);
@@ -235,10 +233,10 @@ html{
     }
     
     .line{
-        width:35px;
-        height:3px;
+        width:32px;
+        height:4px;
         background-color: #f4f4f4;
-        border-radius: 50px;
+        border-radius: 10px;
         transition: all 700ms ease-in-out;
     }
 
@@ -578,7 +576,8 @@ html{
         font-size: .8em;
     }
     .quote {
-        font-size: 1.6em;
+        font-size: 1.4em;
+        margin-right: 2.2em;
     }
 }
 
@@ -1167,7 +1166,8 @@ html{
 }
 
 .teamMoto-cont p span{
-    font-weight:900;
+    color:#f4f4f4;
+    text-shadow:0 0 5px #222831;
 }
 
 
@@ -1578,6 +1578,188 @@ iframe{
     pointer-events: auto;
     opacity: 1;
 }
+
+
+/* 
+.fuck{
+    width:50px;
+    height:50px;
+    background-color: blue;
+    position: fixed;
+    bottom:30px;
+    left:20px;
+}
+
+.serBox{
+    background-color: red;
+    width:100%;
+    height:100%;
+    position: absolute;
+    top:-150%;
+    left:0;
+    z-index: 100;
+} */
+
+
+
+/* +++++++++++++++++ SEARCH BOX ++++++++++++++++++++++ */
+
+
+.searchIcon{
+    position:fixed;
+    bottom: 18px;
+    left:20px;
+    width:43px;
+    height:43px;
+    background-color:#fdb827;
+    border-radius: 50%;
+    box-shadow: 0 0 5px #222831;
+    font-size: .7em;
+    text-shadow: 3px 0 3px #2d2d2d;
+    color:#f4f4f4;
+    transform: rotate(-5deg);
+    display: none;
+    z-index: 20;
+}
+
+
+.searchBox-cont{
+    display: none;
+}
+
+
+@media(max-width:500px){
+
+
+    .cont-2{
+        display: none;
+    }
+
+    .cont-1{
+        margin-top: 7em;
+    }
+
+    .main{
+        height:100vh;
+    }
+
+    .searchIcon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .searchBox-cont{
+        display: block;
+        width:100%;
+        min-height:100%;
+        background-color:#f4f4f4;
+        position: absolute;
+        top:-120%;
+        left:0;
+        z-index: 100;
+        transition: all 600ms cubic-bezier(0.94, -0.11, 0.1, 1.19);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1em 0 5em 0;
+    }
+
+    .closeBtn-cont{
+        width:80%;
+        margin-top: 2em;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        color:#222831;
+    }
+
+    .inputBox-cont{
+        /* border: 1px solid red; */
+        padding: 2em;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .actual-input{
+        border:none;
+        outline: none;
+        padding:.7em 2em .7em .4em;
+        font-size: 1em;
+        font-family: 'poppins',sans-serif;
+        color:#222831;
+    }
+
+    .Go-btn{
+        padding: .7em;
+        font-size: 1em;
+        border:none;
+        outline: none;
+        background-color:#fdb827;
+        color:#f4f4f4;
+        font-family: 'poppins',sans-serif;
+        font-weight: 400;
+    }
+
+    .searched-depts-cont{
+        width:100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .searched-depts-cont ul{
+        list-style: none;
+        width:100%;
+    }
+
+    .searched-depts-cont ul li{
+        border-bottom:.5px solid #222831;
+        width:100%;
+        display: flex;
+        padding: 1.5em 1.3em;
+        justify-content: space-between;
+    }
+
+    .searched-depts-cont ul li p{
+        text-decoration: none;
+        color:#222831;
+        font-size: 1.2em;
+        font-weight: 500;
+    }
+}
+
+
+.animation-for-closeBtn{
+    animation: spinLogo 500ms linear;
+    animation-iteration-count: 2;
+}
+
+@keyframes spinCloseBtn{
+    from{
+        transform: rotate(0deg);
+    
+    }
+    to{
+        transform: rotate(360deg);
+
+    }
+}
+
+.sryTxtCont{
+    width:60%;
+    margin:0 auto;
+    padding-top:3em;
+    line-height:1.5em;
+    
+}
+
+
+
+
+
+
 
 
 
