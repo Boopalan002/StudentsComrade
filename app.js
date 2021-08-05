@@ -486,6 +486,12 @@ const depArr=[
     },
         
     {
+        dept:"ss",
+        link:"departments@kgcas/MscSS.html",
+        deptName:"M.Sc.SS",
+    },
+        
+    {
         dept:"mscmaths",
         link:" ",
         deptName:"M.Sc.Maths",
@@ -503,7 +509,9 @@ const closingCross=document.querySelector('.closing-cross');
 
 searchIcon.addEventListener('click',()=>{
     searchBoxCont.style.top=`${pageYOffset}px`;
-
+    // searchBoxCont.style.width=`${screenWidth}px`;
+    // console.log(screenWidth);
+    
     closingCross.classList.remove('animation-for-closeBtn');
 })
 
