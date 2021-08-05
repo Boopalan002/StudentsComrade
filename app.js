@@ -375,6 +375,18 @@ const depArr=[
     },
     
     {
+        dept:"computerapplications",
+        link:"departments@kgcas/science_BCA.html",
+        deptName:"BCA",
+    },
+    
+    {
+        dept:"computerapplication",
+        link:"departments@kgcas/science_BCA.html",
+        deptName:"BCA",
+    },
+    
+    {
         dept:"baenglit",
         link:"departments@kgcas/maenglish.html",
         deptName:"B.A.Eng Lit",
@@ -514,7 +526,34 @@ goBtn.addEventListener('click',()=>{
    
     let modifiedInput=makeStringShort(typed);
 
- 
+    emptArray= findTheDepartment(modifiedInput);
+
+    if(emptArray.length===0){
+        printerrormsg(modifiedInput);
+    }else{
+        displaySearchedDept(emptArray);
+    }
+
+
+    emptArray=[];
+})
+
+
+
+function makeStringShort(intputStr){
+    
+    let arr=Array.from(intputStr);
+    arr= arr.filter((e)=>(e!=" " && e!="."));
+    arr=arr.join("");
+    return arr;
+}
+
+
+
+
+
+function findTheDepartment(modifiedInput){
+
 
 
     if(modifiedInput==="english" || modifiedInput==="eng"){
@@ -554,6 +593,18 @@ goBtn.addEventListener('click',()=>{
                 emptArray.push(depArr[i]);
             }
         }
+    }else if(modifiedInput==="bba"){
+        for(let i=0;i<depArr.length;i++){
+            if(depArr[i]["dept"][0]==='b' && depArr[i]["dept"][1]==='b' && depArr[i]["dept"][2]==='a'){
+                emptArray.push(depArr[i]);
+            }
+        }
+    }else if(modifiedInput==="ca"){
+        for(let i=0;i<depArr.length;i++){
+            if(depArr[i]["dept"][depArr[i]["dept"].length-1]==='a' && depArr[i]["dept"][depArr[i]["dept"].length-2]==='c'){
+                emptArray.push(depArr[i]);
+            }
+        }
     }else{
 
         for(let i=0;i<depArr.length;i++){
@@ -563,26 +614,14 @@ goBtn.addEventListener('click',()=>{
         }
     }
 
+    // console.log(emptArray);
+    return emptArray;
 
-
-
-    if(emptArray.length===0){
-        printerrormsg();
-    }else{
-        displaySearchedDept(emptArray);
-    }
-
-
-    emptArray=[];
-})
-
-function makeStringShort(intputStr){
-    
-    let arr=Array.from(intputStr);
-    arr= arr.filter((e)=>(e!=" " && e!="."));
-    arr=arr.join("");
-    return arr;
 }
+
+
+
+
 
 function displaySearchedDept(searchedArrofDept){
     
@@ -618,14 +657,22 @@ function displaySearchedDept(searchedArrofDept){
 }
 
 
-function printerrormsg(){
+function printerrormsg(userWronglyTypedText){
     let sorryText=document.createElement('p');
     sorryText.classList.add('sryTxtCont');
-    sorryText.innerHTML="OOPS! Seems like you misspelled the department name.";
+    if(userWronglyTypedText.length===0){
+        sorryText.innerHTML="SERIOUSLY! you got to type something before pressing that beautiful GO button";
+    }else if(userWronglyTypedText.length===1){
+        sorryText.innerHTML="So you really thing there will be a department with just a single letter";
+    }else{
+        sorryText.innerHTML="OOPS! Seems like you misspelled the department name.";
+    }
+
     sorryText.style.textAlign="center";
     searchedDeptUL.appendChild(sorryText);
-    console.log(searchedDeptUL);
 }
+
+
 
 
 
