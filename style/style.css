@@ -1663,6 +1663,16 @@ iframe{
 
 @media(max-width:460px){
     .actual-input{
+        font-size: .8em;
+    }
+
+    .Go-btn{
+        font-size: .8em;
+    }
+}
+
+@media(max-width:345px){
+    .actual-input{
         font-size: .7em;
     }
 
