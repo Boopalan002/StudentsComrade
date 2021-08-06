@@ -1,9 +1,10 @@
 
 var screenWidth=window.screen.width;
+var heightofPage=window.screen.height
 
 
 
-//  PAGE RELOAD +++++++++++++++++++++++++++++++++
+//+++++++++++++++++++++++++++++++++++PAGE RELOAD +++++++++++++++++++++++++++++++++
 
 const pageReload=document.querySelector('.logo');
 
@@ -12,7 +13,9 @@ pageReload.addEventListener('click',()=>{
 })
 
 
-//  HAMBURGER MENU+++++++++++++++++++++++++++++
+
+
+//+++++++++++++++++++++++++++++++++HAMBURGER MENU+++++++++++++=++++++++++++++++++++++++
 
 
 
@@ -44,17 +47,17 @@ hamburger.addEventListener('click',()=>{
     nav.classList.toggle('show');
 
 
-        line1.classList.toggle('changetheline1');
-        line3.classList.toggle('changetheline3');
+    line1.classList.toggle('changetheline1');
+    line3.classList.toggle('changetheline3');
 
-        midLine1.classList.toggle('changeMidLine1');
-        midLine2.classList.toggle('changeMidLine2');
+    midLine1.classList.toggle('changeMidLine1');
+    midLine2.classList.toggle('changeMidLine2');
 
 })
 
 
 
-//  QUOTE GENERATOR+++++++++++++++++++++++++++++++
+//+++++++++++++++++++++++++++++++++++++++++++++QUOTE GENERATOR+++++++++++++++++++++++++++++++
 
 
 const arrOfQuotes=[
@@ -170,6 +173,19 @@ var count=0;
 
 quoteBtn.addEventListener('click',()=>{
     
+    setTheAuthorImg(count);
+ 
+    changeTheQuote(count);
+
+    count++;
+    if(count===arrOfQuotes.length){
+        count=0;
+    }
+
+});
+
+
+function setTheAuthorImg(count){
 
     if(screenWidth<=520){
         if(arrOfQuotes[count].image==="MarieCurie"){
@@ -181,24 +197,21 @@ quoteBtn.addEventListener('click',()=>{
     }else{
         quoteImg.style.backgroundImage=`url(AuthorsImg/${arrOfQuotes[count].image}.jpg)`;
     }
-    
+
+}
+
+function changeTheQuote(count){
+
     theQuote.innerHTML=arrOfQuotes[count].quote;
     theAuthor.innerHTML=arrOfQuotes[count].author;
-    count++;
-    console.log("hellll");
 
-    if(count===arrOfQuotes.length){
-        count=0;
-    }
-
-
- });
+}
 
 
 
 
 
- //  SCROLL UP BUTTON++++++++++++++++++++++++++++++
+ //+++++++++++++++++++++++++++++++++SCROLL UP BUTTON++++++++++++++++++++++++++++++++++
 
 const goTopBtn=document.querySelector('.scroll-up-BtnCont');
 
@@ -212,7 +225,7 @@ window.addEventListener('scroll',()=>{
 })
 
 
-// ANIMATION STUFF ++++++++++++++++++++++++++++++++++++++
+//++++++++++++++++++++++++++++++++++++ANIMATION STUFF ++++++++++++++++++++++++++++++++++++++
 
 const motoHead=document.querySelector('.team-moto-txt');
 const motoPara=document.querySelector('.team-moto-para');
@@ -220,6 +233,13 @@ const motoPara=document.querySelector('.team-moto-para');
 
 
 window.addEventListener('scroll',()=>{
+
+    popUpTheMoto();
+
+})
+
+
+function popUpTheMoto(){
 
     if(screenWidth<=500){
         
@@ -292,12 +312,12 @@ window.addEventListener('scroll',()=>{
         }
     }
 
-})
+}
 
 
 
 
-// ++++++++++++++++++++++++Search Box+++++++++++++++++++++++++++++++++++++++++++++
+// +++++++++++++++++++++++++++++++++++++++++++Search Box+++++++++++++++++++++++++++++++++++++++++++++
 
 
 const depArr=[
@@ -307,18 +327,7 @@ const depArr=[
         link:" ",
         deptName:"B.Sc.CS",
     },
-    
-    {
-        dept:"computerscience",
-        link:" ",
-        deptName:"B.Sc.CS",
-    },
-    
-    {
-        dept:"cs",
-        link:" ",
-        deptName:"B.Sc.CS",
-    },
+
     
     {
         dept:"bscmaths",
@@ -350,53 +359,28 @@ const depArr=[
         deptName:"B.Sc.IT",
     },
     
-    {
-        dept:"it",
-        link:" ",
-        deptName:"B.Sc.IT",
-    },
-    
+
     {
         dept:"bscct",
         link:" ",
         deptName:"B.Sc.CT",
     },
     
-    {
-        dept:"ct",
-        link:" ",
-        deptName:"B.Sc.CT",
-    },
+
     
     {
         dept:"bca",
         link:"departments@kgcas/science_BCA.html",
         deptName:"BCA",
     },
-    
-    {
-        dept:"computerapplications",
-        link:"departments@kgcas/science_BCA.html",
-        deptName:"BCA",
-    },
-    
-    {
-        dept:"computerapplication",
-        link:"departments@kgcas/science_BCA.html",
-        deptName:"BCA",
-    },
+
     
     {
         dept:"baenglit",
         link:"departments@kgcas/maenglish.html",
         deptName:"B.A.Eng Lit",
     },
-    
-    {
-        dept:"baeng",
-        link:"departments@kgcas/maenglish.html",
-        deptName:"B.A.Eng Lit",
-    },
+
     
     {
         dept:"bba",
@@ -439,42 +423,16 @@ const depArr=[
         link:"departments@kgcas/MAEng.html",
         deptName:"M.A.Eng Lit",
     },
-    
-    {
-        dept:"maeng",
-        link:"departments@kgcas/MAEng.html",
-        deptName:"M.A.Eng Lit",
-    },
+
     
     {
         dept:"mcomib",
         link:"departments@kgcas/MCom_IB.html",
         deptName:"M.Com.IB",
     },
-
-        
-    {
-        dept:"mcom",
-        link:"departments@kgcas/MCom_IB.html",
-        deptName:"M.Com.IB",
-    },
-
         
     {
         dept:"msccs",
-        link:"",
-        deptName:"M.Sc.CS",
-    },
-
-        
-    {
-        dept:"computerscience",
-        link:"",
-        deptName:"M.Sc.CS",
-    },
-    
-    {
-        dept:"cs",
         link:"",
         deptName:"M.Sc.CS",
     },
@@ -499,9 +457,9 @@ const depArr=[
 
 ];
 
+
+
 var emptArray=[];
-
-
 
 const searchIcon=document.querySelector('.searchIcon');
 const searchBoxCont=document.querySelector('.searchBox-cont');
@@ -509,8 +467,6 @@ const closingCross=document.querySelector('.closing-cross');
 
 searchIcon.addEventListener('click',()=>{
     searchBoxCont.style.top=`${pageYOffset}px`;
-    // searchBoxCont.style.width=`${screenWidth}px`;
-    // console.log(screenWidth);
     
     closingCross.classList.remove('animation-for-closeBtn');
 })
@@ -563,66 +519,119 @@ function makeStringShort(intputStr){
 function findTheDepartment(modifiedInput){
 
 
+    if(modifiedInput.length!=0){
+ 
+        let itHave=true;
+        for(let i=0;i<depArr.length;i++){
+            for(let j=0;j<modifiedInput.length;j++){
+                
+                if(modifiedInput[j]!=depArr[i]["dept"][j]){
+                    itHave=false;
+                    break;
+                }
 
-    if(modifiedInput==="english" || modifiedInput==="eng"){
-        for(let i=0;i<depArr.length;i++){
-            if(depArr[i]["dept"]==="baenglit" || depArr[i]["dept"]==="maenglit"){
-                emptArray.push(depArr[i]);
             }
-        }
-    }else if(modifiedInput==="maths" || modifiedInput==="mat" || modifiedInput==="math"){
-        for(let i=0;i<depArr.length;i++){
-            if(depArr[i]["dept"]==="bscmaths" || depArr[i]["dept"]==="mscmaths"){
-                emptArray.push(depArr[i]);
-            }
-        }
-    }else if(modifiedInput==="biotech" || modifiedInput==="bio"){
-        for(let i=0;i<depArr.length;i++){
-            if(depArr[i]["dept"]==="bscbiotech"){
-                emptArray.push(depArr[i]);
-                break;
-            }
-        }
-    }else if(modifiedInput==="bsc"){
-        for(let i=0;i<depArr.length;i++){
-            if(depArr[i]["dept"][0]==='b' && depArr[i]["dept"][1]==='s' && depArr[i]["dept"][2]==='c'){
-                emptArray.push(depArr[i]);
-            }
-        }
-    }else if(modifiedInput==="msc"){
-        for(let i=0;i<depArr.length;i++){
-            if(depArr[i]["dept"][0]==='m' && depArr[i]["dept"][1]==='s' && depArr[i]["dept"][2]==='c'){
-                emptArray.push(depArr[i]);
-            }
-        }
-    }else if(modifiedInput==="bcom"){
-        for(let i=0;i<depArr.length;i++){
-            if(depArr[i]["dept"][0]==='b' && depArr[i]["dept"][1]==='c' && depArr[i]["dept"][2]==='o'){
-                emptArray.push(depArr[i]);
-            }
-        }
-    }else if(modifiedInput==="bba"){
-        for(let i=0;i<depArr.length;i++){
-            if(depArr[i]["dept"][0]==='b' && depArr[i]["dept"][1]==='b' && depArr[i]["dept"][2]==='a'){
-                emptArray.push(depArr[i]);
-            }
-        }
-    }else if(modifiedInput==="ca"){
-        for(let i=0;i<depArr.length;i++){
-            if(depArr[i]["dept"][depArr[i]["dept"].length-1]==='a' && depArr[i]["dept"][depArr[i]["dept"].length-2]==='c'){
-                emptArray.push(depArr[i]);
-            }
-        }
-    }else{
 
-        for(let i=0;i<depArr.length;i++){
-            if(depArr[i]["dept"]===modifiedInput){
+            if(itHave===true){
                 emptArray.push(depArr[i]);
+            }else{
+                itHave=true;
             }
+
         }
+
     }
 
-    // console.log(emptArray);
+
+
+    if(emptArray.length===0){
+
+
+        if(modifiedInput==="english" || modifiedInput==="eng"){
+            for(let i=0;i<depArr.length;i++){
+                if(depArr[i]["dept"]==="baenglit" || depArr[i]["dept"]==="maenglit"){
+                    emptArray.push(depArr[i]);
+                }
+            }
+        }else if(modifiedInput==="maths" || modifiedInput==="mat" || modifiedInput==="math"){
+            for(let i=0;i<depArr.length;i++){
+                if(depArr[i]["dept"]==="bscmaths" || depArr[i]["dept"]==="mscmaths"){
+                    emptArray.push(depArr[i]);
+                }
+            }
+        }else if(modifiedInput==="biotech" || modifiedInput==="bio"){
+            for(let i=0;i<depArr.length;i++){
+                if(depArr[i]["dept"]==="bscbiotech"){
+                    emptArray.push(depArr[i]);
+                    break;
+                }
+            }
+        }else if(modifiedInput==="ca"){
+            for(let i=0;i<depArr.length;i++){
+                if(depArr[i]["dept"][depArr[i]["dept"].length-1]==='a' && depArr[i]["dept"][depArr[i]["dept"].length-2]==='c'){
+                    emptArray.push(depArr[i]);
+                }
+            }
+        }else if(modifiedInput==="it" || modifiedInput==="informationtechnology"){
+            for(let i=0;i<depArr.length;i++){
+                if(depArr[i]["dept"]==="bcomit" || depArr[i]["dept"]==="bscit"){
+                    emptArray.push(depArr[i]);
+                }
+            }
+        }else if(modifiedInput==="computerscience" || modifiedInput==="cs"){
+            for(let i=0;i<depArr.length;i++){
+                if(depArr[i]["dept"]==="bsccs" || depArr[i]["dept"]==="msccs"){
+                    emptArray.push(depArr[i]);
+                }
+            }
+        }else if(modifiedInput==="computerapplications" || modifiedInput==="computerapplication"){
+            for(let i=0;i<depArr.length;i++){
+                if(depArr[i]["dept"]==="bca"){
+                    emptArray.push(depArr[i]);
+                }
+            }
+        }
+        //else if(modifiedInput==="bsc"){
+        //     for(let i=0;i<depArr.length;i++){
+        //         if(depArr[i]["dept"][0]==='b' && depArr[i]["dept"][1]==='s' && depArr[i]["dept"][2]==='c'){
+        //             emptArray.push(depArr[i]);
+        //         }
+        //     }
+        // }else if(modifiedInput==="msc"){
+        //     for(let i=0;i<depArr.length;i++){
+        //         if(depArr[i]["dept"][0]==='m' && depArr[i]["dept"][1]==='s' && depArr[i]["dept"][2]==='c'){
+        //             emptArray.push(depArr[i]);
+        //         }
+        //     }
+        // }else if(modifiedInput==="bcom"){
+        //     for(let i=0;i<depArr.length;i++){
+        //         if(depArr[i]["dept"][0]==='b' && depArr[i]["dept"][1]==='c' && depArr[i]["dept"][2]==='o'){
+        //             emptArray.push(depArr[i]);
+        //         }
+        //     }
+        // }else if(modifiedInput==="bba"){
+        //     for(let i=0;i<depArr.length;i++){
+        //         if(depArr[i]["dept"][0]==='b' && depArr[i]["dept"][1]==='b' && depArr[i]["dept"][2]==='a'){
+        //             emptArray.push(depArr[i]);
+        //         }
+        //     }
+        // }else if(modifiedInput==="ca"){
+        //     for(let i=0;i<depArr.length;i++){
+        //         if(depArr[i]["dept"][depArr[i]["dept"].length-1]==='a' && depArr[i]["dept"][depArr[i]["dept"].length-2]==='c'){
+        //             emptArray.push(depArr[i]);
+        //         }
+        //     }
+        // }else{
+    
+        //     for(let i=0;i<depArr.length;i++){
+        //         if(depArr[i]["dept"]===modifiedInput){
+        //             emptArray.push(depArr[i]);
+        //         }
+        //     }
+        // }
+
+    }
+
     return emptArray;
 
 }
@@ -670,8 +679,6 @@ function printerrormsg(userWronglyTypedText){
     sorryText.classList.add('sryTxtCont');
     if(userWronglyTypedText.length===0){
         sorryText.innerHTML="SERIOUSLY! you got to type something before pressing that beautiful GO button";
-    }else if(userWronglyTypedText.length===1){
-        sorryText.innerHTML="So you really thing there will be a department with just a single letter";
     }else{
         sorryText.innerHTML="OOPS! Seems like you misspelled the department name.";
     }
@@ -693,3 +700,78 @@ closingCross.addEventListener('click',()=>{
     searchedDeptUL.innerHTML=" ";
     actualInput.value="";
 })
+
+
+
+
+// +++++++++++++++++++++++++++++++++++++SEARCH MSG POPUP++++++++++++++++++++++++++++++++++++++++++++++++++
+
+const searchIconId=document.querySelector('#search-ICON');
+const searchMsg=document.querySelector('.searchMsg');
+const scrollUpBtnId=document.querySelector('#scrollupBtnCont');
+const scrollupButton=document.querySelector('#scroll-up-Btn');
+
+console.log(searchIconId);
+
+// searchIconId.addEventListener('mouseover',()=>{
+//     searchMsg.style.clipPath= "polygon(0 0,100% 0,100% 100%,0 100%)";
+// })
+// searchIconId.addEventListener('mouseout',()=>{
+//     searchMsg.style.clipPath= "polygon(0 0,0% 0,0% 100%,0 100%)";
+// })
+
+
+function autoPopUpMsg(){
+    setTimeout(()=>{
+        searchMsg.style.clipPath= "polygon(0 0,100% 0,100% 100%,0 100%)";
+        searchMsg.classList.add('vibrateMsg');
+    },7000)
+
+    setTimeout(()=>{
+        searchMsg.style.clipPath= "polygon(0 0,0% 0,0% 100%,0 100%)";
+    },12000)
+}
+
+autoPopUpMsg();
+
+
+
+
+
+const teamCont=document.querySelector('.sec-4');
+
+
+window.addEventListener('scroll',()=>{
+
+    let currentPosOfSec=teamCont.getBoundingClientRect().top;
+
+    if((currentPosOfSec+18)<heightofPage){
+        searchIconId.classList.add('changePropOf');
+        scrollUpBtnId.classList.add('changePropOf');
+        scrollupButton.style.color="#222831";
+    }else{
+        searchIconId.classList.remove('changePropOf');
+        scrollUpBtnId.classList.remove('changePropOf');
+        scrollupButton.style.color="#f4f4f4";
+    }
+})
+
+
+
+
+
+const vvvv=document.querySelector('.cont-2');
+
+console.log(vvvv.getBoundingClientRect());
+
+if((heightofPage-30)<vvvv.getBoundingClientRect().bottom){
+    vvvv.style.display="none";
+}
+
+
+
+
+
+
+
+
