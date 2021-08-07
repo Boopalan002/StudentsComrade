@@ -36,6 +36,7 @@ html{
     user-select: none;
     overflow: hidden;
     margin-bottom: 3.5em;
+
 }
 
 .headerr{
@@ -661,7 +662,7 @@ html{
 .card:hover,
 .card:focus{
     transform:scale(1.04);
-    box-shadow: 0 0 5px #222831;
+    box-shadow: 0 5px 5px #222831;
 }
 
 .card1{
@@ -758,7 +759,7 @@ html{
     position: relative;
     padding: .5em .5em .5em 0;
     color:#f4f4f4;
-    text-shadow: 0 0 5px #222831;
+    /* text-shadow: 0 0 5px #222831; */
 }
 
 .card-content h2::after{
@@ -781,6 +782,12 @@ html{
 }
 .cardHead3::after{
     width:155px;
+}
+
+
+.card:hover .card-content h2,
+.card:focus .card-content h2{
+    text-shadow: 3px 3px 5px #222831;
 }
 
 .card:hover .card-content h2::after,
@@ -1623,7 +1630,7 @@ iframe{
     font-size: .9em;
     clip-path: polygon(0 0,0% 0,0% 100%,0 100%);
     transition: all 500ms linear;
-    z-index: 100;
+    z-index: 19;
 }
 
 .vibrateMsg{
@@ -1651,7 +1658,7 @@ iframe{
     top:-120%;
     left:0;
     width:40%;
-    height:100vh;
+    height:100%;
     z-index:500;
     display: flex;
     flex-direction: column;
