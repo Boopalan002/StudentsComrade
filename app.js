@@ -480,26 +480,37 @@ const actualInput=document.querySelector('.actual-input');
 const searchedDeptUL=document.querySelector('#searchedDept');
 
 
-goBtn.addEventListener('click',()=>{
+actualInput.addEventListener('input',()=>{
+
 
     searchedDeptUL.innerHTML=" ";
+    emptArray=[];
 
-    let typed=actualInput.value;
-    typed=typed.toLowerCase();
 
-   
-    let modifiedInput=makeStringShort(typed);
+         let typed=actualInput.value;
+         typed=typed.toLowerCase();
+
+        let modifiedInput=makeStringShort(typed);
 
     emptArray= findTheDepartment(modifiedInput);
 
-    if(emptArray.length===0){
-        printerrormsg(modifiedInput);
-    }else{
+    if(emptArray.length!=0){
         displaySearchedDept(emptArray);
     }
 
 
     emptArray=[];
+    
+})
+
+console.log(actualInput);
+
+
+goBtn.addEventListener('click',()=>{
+
+    modifiedInput=actualInput.value;
+    printerrormsg(modifiedInput);
+
 })
 
 
@@ -675,16 +686,19 @@ function displaySearchedDept(searchedArrofDept){
 
 
 function printerrormsg(userWronglyTypedText){
-    let sorryText=document.createElement('p');
-    sorryText.classList.add('sryTxtCont');
-    if(userWronglyTypedText.length===0){
-        sorryText.innerHTML="SERIOUSLY! you got to type something before pressing that beautiful GO button";
-    }else{
-        sorryText.innerHTML="OOPS! Seems like you misspelled the department name.";
-    }
 
-    sorryText.style.textAlign="center";
-    searchedDeptUL.appendChild(sorryText);
+    if(searchedDeptUL.children.length===0){
+        let sorryText=document.createElement('p');
+        sorryText.classList.add('sryTxtCont');
+        if(userWronglyTypedText.length===0){
+            sorryText.innerHTML="SERIOUSLY! you got to type something before pressing that beautiful GO button";
+        }else{
+            sorryText.innerHTML="OOPS! Seems like you misspelled the department name.";
+        }
+
+        sorryText.style.textAlign="center";
+        searchedDeptUL.appendChild(sorryText);
+    }   
 }
 
 
@@ -713,23 +727,23 @@ const scrollupButton=document.querySelector('#scroll-up-Btn');
 
 console.log(searchIconId);
 
-// searchIconId.addEventListener('mouseover',()=>{
-//     searchMsg.style.clipPath= "polygon(0 0,100% 0,100% 100%,0 100%)";
-// })
-// searchIconId.addEventListener('mouseout',()=>{
-//     searchMsg.style.clipPath= "polygon(0 0,0% 0,0% 100%,0 100%)";
-// })
+searchIconId.addEventListener('mouseover',()=>{
+    searchMsg.style.clipPath= "polygon(0 0,100% 0,100% 100%,0 100%)";
+})
+searchIconId.addEventListener('mouseout',()=>{
+    searchMsg.style.clipPath= "polygon(0 0,0% 0,0% 100%,0 100%)";
+})
 
 
 function autoPopUpMsg(){
     setTimeout(()=>{
         searchMsg.style.clipPath= "polygon(0 0,100% 0,100% 100%,0 100%)";
         searchMsg.classList.add('vibrateMsg');
-    },7000)
+    },5800)
 
     setTimeout(()=>{
         searchMsg.style.clipPath= "polygon(0 0,0% 0,0% 100%,0 100%)";
-    },12000)
+    },8200)
 }
 
 autoPopUpMsg();
@@ -745,7 +759,7 @@ window.addEventListener('scroll',()=>{
 
     let currentPosOfSec=teamCont.getBoundingClientRect().top;
 
-    if((currentPosOfSec+18)<heightofPage){
+    if((currentPosOfSec)<(heightofPage-18)){
         searchIconId.classList.add('changePropOf');
         scrollUpBtnId.classList.add('changePropOf');
         scrollupButton.style.color="#222831";
