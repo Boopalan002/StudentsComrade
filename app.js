@@ -433,7 +433,7 @@ const depArr=[
         
     {
         dept:"msccs",
-        link:"departments@kgcas/msc-maths.html",
+        link:"departments@kgcas/msccs.html",
         deptName:"M.Sc.CS",
     },
         
@@ -454,18 +454,13 @@ const depArr=[
         link:"departments@kgcas/msc-maths.html",
         deptName:"M.Sc.Maths",
     },
-        
-    {
-        dept:"mscda",
-        link:"departments@kgcas/msc-da.html",
-        deptName:"M.Sc.DA",
-    },
 
 ];
 
 
 
 var emptArray=[];
+var instanceOfEmptArray=[];
 
 const searchIcon=document.querySelector('.searchIcon');
 const searchBoxCont=document.querySelector('.searchBox-cont');
@@ -504,12 +499,13 @@ actualInput.addEventListener('input',()=>{
         displaySearchedDept(emptArray);
     }
 
+    instanceOfEmptArray=emptArray;
 
     emptArray=[];
     
 })
 
-console.log(actualInput);
+
 
 
 goBtn.addEventListener('click',()=>{
@@ -704,6 +700,8 @@ function printerrormsg(userWronglyTypedText){
 
         sorryText.style.textAlign="center";
         searchedDeptUL.appendChild(sorryText);
+    }else if(searchedDeptUL.children.length===1){
+        window.location.href = `${instanceOfEmptArray[0]["link"]}`;
     }   
 }
 
@@ -731,7 +729,7 @@ const searchMsg=document.querySelector('.searchMsg');
 const scrollUpBtnId=document.querySelector('#scrollupBtnCont');
 const scrollupButton=document.querySelector('#scroll-up-Btn');
 
-console.log(searchIconId);
+
 
 searchIconId.addEventListener('mouseover',()=>{
     searchMsg.style.clipPath= "polygon(0 0,100% 0,100% 100%,0 100%)";
