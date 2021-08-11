@@ -1722,12 +1722,12 @@ iframe{
 @media(max-width:400px){
     .actual-input{
         font-size: .9em;
-        padding:1em 2em 1em .7em;
+        /* padding:1em 2em 1em .7em; */
     }
 
     .Go-btn{
         font-size: .9em;
-        padding: 1em;
+        /* padding: 1em; */
     }
 }
 
