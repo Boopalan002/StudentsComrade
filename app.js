@@ -324,14 +324,22 @@ const depArr=[
     
     {
         dept:"bsccs",
-        link:" ",
+        link:"",
         deptName:"B.Sc.CS",
+    },
+
+    
+    
+    {
+        dept:"bca",
+        link:"departments@kgcas/science_BCA.html",
+        deptName:"BCA",
     },
 
     
     {
         dept:"bscmaths",
-        link:" ",
+        link:"departments@kgcas/bsc-maths.html",
         deptName:"B.Sc.Maths",
     },
     
@@ -366,14 +374,6 @@ const depArr=[
         deptName:"B.Sc.CT",
     },
     
-
-    
-    {
-        dept:"bca",
-        link:"departments@kgcas/science_BCA.html",
-        deptName:"BCA",
-    },
-
     
     {
         dept:"baenglit",
@@ -384,13 +384,13 @@ const depArr=[
     
     {
         dept:"bba",
-        link:" ",
+        link:"departments@kgcas/bba.html",
         deptName:"BBA",
     },
     
     {
         dept:"bbaca",
-        link:" ",
+        link:"departments@kgcas/bba-ca.html",
         deptName:"BBA.CA",
     },
     
@@ -433,7 +433,7 @@ const depArr=[
         
     {
         dept:"msccs",
-        link:"",
+        link:"departments@kgcas/msc-maths.html",
         deptName:"M.Sc.CS",
     },
         
@@ -451,8 +451,14 @@ const depArr=[
         
     {
         dept:"mscmaths",
-        link:" ",
+        link:"departments@kgcas/msc-maths.html",
         deptName:"M.Sc.Maths",
+    },
+        
+    {
+        dept:"mscda",
+        link:"departments@kgcas/msc-da.html",
+        deptName:"M.Sc.DA",
     },
 
 ];
@@ -735,16 +741,27 @@ searchIconId.addEventListener('mouseout',()=>{
 })
 
 
+let countPopUp=0;
 function autoPopUpMsg(){
     setTimeout(()=>{
         searchMsg.style.clipPath= "polygon(0 0,100% 0,100% 100%,0 100%)";
         searchMsg.classList.add('vibrateMsg');
-    },5800)
+        countPopUp++;
+    },4000)
 
     setTimeout(()=>{
         searchMsg.style.clipPath= "polygon(0 0,0% 0,0% 100%,0 100%)";
-    },8200)
+        searchMsg.classList.remove('vibrateMsg');
+    },7000)
+
+    setTimeout(()=>{
+        if(countPopUp===2){
+            return;
+        }
+        autoPopUpMsg();
+    },10000);
 }
+
 
 autoPopUpMsg();
 
@@ -769,21 +786,6 @@ window.addEventListener('scroll',()=>{
         scrollupButton.style.color="#f4f4f4";
     }
 })
-
-
-
-
-
-const vvvv=document.querySelector('.cont-2');
-
-console.log(vvvv.getBoundingClientRect());
-
-if((heightofPage-30)<vvvv.getBoundingClientRect().bottom){
-    vvvv.style.display="none";
-}
-
-
-
 
 
 
