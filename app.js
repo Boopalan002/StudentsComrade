@@ -324,7 +324,7 @@ const depArr=[
     
     {
         dept:"bsccs",
-        link:"",
+        link:"departments@kgcas/science_CS.html",
         deptName:"B.Sc.CS",
     },
 
@@ -363,14 +363,14 @@ const depArr=[
     
     {
         dept:"bscit",
-        link:" ",
+        link:"departments@kgcas/science_IT.html",
         deptName:"B.Sc.IT",
     },
     
 
     {
         dept:"bscct",
-        link:" ",
+        link:"departments@kgcas/science_CT.html",
         deptName:"B.Sc.CT",
     },
     
