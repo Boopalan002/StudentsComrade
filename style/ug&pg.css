@@ -1,11 +1,7 @@
-/*body {
-  background-image: url("../images/body_bg.png");
-  background-repeat: no-repeat;
-  background-size: cover;*/
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800;900&display=swap');
 *{
-  font-family: 'Poppins', sans-serif;    
+  font-family: 'Poppins', sans-serif;
 }
 body{
   line-height: 1.2em;
@@ -47,14 +43,14 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-top: 25px;
-  
+
 }
 .carousel-caption p {
   width: 60%;
   margin: auto;
   font-size: 18px;
   line-height: 1.9;
-  
+
 }
 .carousel-caption a {
   text-transform: uppercase;
@@ -128,7 +124,7 @@ h1 {
     .card a:hover {
       text-decoration: initial;
     }
-  
+
   .text-muted i {
     margin: 0 10px;
   }
@@ -137,7 +133,7 @@ h1 {
 .content {
   width: 77%;
   margin: 50px auto;
-  
+
   font-size: 17px;
   color: #6c767a;
   line-height: 1.9;
@@ -159,9 +155,3 @@ h1 {
   font-style: italic;
   color: #96a2a7;
 }
-
-
-
-
-
-
