@@ -665,6 +665,7 @@ function displaySearchedDept(searchedArrofDept){
 
         let actualArrow=document.createElement('i');
 
+        liOfDept.style.cursor="pointer";
         
         pOfDept.innerHTML=searchedArrofDept[i]["deptName"];
         actualArrow.classList.add('fas');
